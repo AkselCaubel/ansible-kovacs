@@ -82,7 +82,7 @@ ansible [core 2.17.14]
 ```
 
 > NOTE :  
-> La version proposé par la distribution est plus vielle (2.10.8) contre une version 2.17.14 pour la version donnée par le rero `PPA`.  
+> La version proposé par la distribution est plus vielle (2.10.8) contre une version 2.17.14 pour la version donnée par le repo `PPA`.  
 
 - Notez la version fournie par ce dépôt tiers et comparez avec la version officielle du challenge précédent.
 
