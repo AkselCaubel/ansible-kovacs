@@ -1,18 +1,3 @@
-# Les handlers
-
-Dossier de travail : `formation-ansible/atelier-12/`
-
-Répertoire de travail dans la vm vagrant ansible : `~/ansible/projets/ema`
-
-## Chrony
-
-Utilisation du gestionnaire de paquet `dnf` pour les hosts rocky
-
-Le packet se nomme `chrony`. Le service qu'en à lui utilise le nom du deamon `chronyd`
-
-J'utilise ici un handler pour prendre en compte la configuration à chaque modification de cette dernière.
-
-```yml
 ---  # chrony.yml
 
 - hosts: redhat
@@ -51,7 +36,3 @@ J'utilise ici un handler pour prendre en compte la configuration à chaque modif
       service:
         name: chronyd
         state: restarted
-```
-
-> NOTE :  
-> Lors du premier jeu du playbook, l'handler est appelé mais pas au deuxième car aucune modification n'est faite. Ce qui vérifie l'idempotence de notre playbook.

@@ -4,7 +4,6 @@ Dossier de travail : `formation-ansible/atelier-10/`
 
 Répertoire de travail dans la vm vagrant ansible : `~/ansible/projets/ema`
 
-Pour cet atelier, je vais utiliser 
 
 ## Debian
 
