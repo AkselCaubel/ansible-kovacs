@@ -1,0 +1,15 @@
+--- # kernel.yml
+
+- hosts: all
+  gather_facts: false
+
+  tasks:
+
+    - name: Report kernel info
+      command: uname -a 
+      changed_when: false
+      register: uname_cmd
+
+    - debug:
+        #msg: "{{ uname_cmd.stdout_lines }}"
+        var: uname_cmd.stdout_lines

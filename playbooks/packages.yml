@@ -1,0 +1,15 @@
+--- # packages.yml
+
+- hosts: all
+  gather_facts: false
+
+  tasks:
+
+    - name: Report rpm package number
+      shell: "rpm -qa | wc -l"
+      changed_when: false
+      register: rpm_cmd
+
+    - debug:
+        #msg: "{{ rpm.stdout_lines }}"
+        var: rpm_cmd.stdout_lines
