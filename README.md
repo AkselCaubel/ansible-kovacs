@@ -17,7 +17,7 @@ La documentation est sous la forme `atelier/readme.md`.
 [05-Idempotence](notes/05-indempotence.md)  
 [06-Un serveur web simple](notes/06-un-serveur-web-simple.md)
 [07-Les handlers](notes/07-les-handlers.md)
-[]()
+[08-Les variables](notes/08-les-variables.md)
 []()
 []()
 []()

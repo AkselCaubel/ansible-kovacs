@@ -1,0 +1,14 @@
+--- # myvars2.yml
+
+- hosts : target01
+  gather_facts: false
+
+  tasks:
+
+    - name : Define vars
+      set_fact:
+        mycar: peugeot 2008
+        mybike: N/A
+
+    - debug:
+        msg: Ma voiture est la {{ mycar }} tandis que ma moto est une {{ mybike }}

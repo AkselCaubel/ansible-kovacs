@@ -1,0 +1,20 @@
+--- # display_user.yml
+
+- hosts: localhost
+  gather_facts: false
+
+  vars_prompt:
+    - name: user
+      prompt: "Entrez le nom de l'utilisateur"
+      default: "microlinux"
+      private: false
+
+    - name: password
+      prompt: "Entrez le mot de passe"
+      default: "yatahongaga"
+      private: true
+
+  tasks:
+    - name: Afficher les informations saisies
+      debug:
+        msg: "L'utilisateur est '{{ user }}' et son mot de passe est '{{ password }}'"

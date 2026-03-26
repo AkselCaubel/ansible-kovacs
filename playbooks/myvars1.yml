@@ -1,0 +1,13 @@
+--- # myvars1.yml
+
+- hosts : target01
+  gather_facts: false
+
+  vars:
+    mycar: peugeot 2008
+    mybike: N/A
+
+  tasks:
+
+    - debug:
+        msg: Ma voiture est la {{ mycar }} tandis que ma moto est une {{ mybike }}

@@ -1,0 +1,19 @@
+--- # myvars3.yml
+
+- hosts : target01
+  gather_facts: false
+
+  tasks:
+
+    - assert:
+        that:
+          - mycar is defined
+        fail_msg: The mycar variable is undefined or empty.
+
+    - assert:
+        that:
+          - mybike is defined
+        fail_msg: The mybike variable is undefined or empty.
+
+    - debug:
+        msg: Ma voiture est la {{ mycar }} tandis que ma moto est une {{ mybike }}
