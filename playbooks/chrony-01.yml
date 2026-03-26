@@ -1,0 +1,61 @@
+---  # chrony-01.yml
+
+- hosts: all
+
+  tasks:
+
+    ### DEBIAN
+
+    - name: Update package information on Debian/Ubuntu
+      apt:
+        update_cache: true
+        cache_valid_time: 3600
+      when: ansible_os_family == "Debian"
+
+    - name: Install Chrony
+      apt:
+        name: chrony
+      when: ansible_os_family == "Debian"
+
+    ### ROCKY
+
+    - name: Install Chrony
+      dnf:
+        name: chrony
+      when: ansible_os_family == "Rocky"
+
+    ### SUSE
+
+    - name: Install Chrony
+      zypper:
+        name: chrony
+      when: ansible_os_family == "openSUSE Leap"
+
+    - name: Start & enable Chrony
+      service:
+        name: chronyd.service
+        state: started
+        enabled: true
+        
+    - name: Set chrony configuration
+      copy:
+        dest: /etc/chrony.conf
+        mode: 0644
+        content: |
+          # /etc/chrony.conf
+          server 0.fr.pool.ntp.org iburst
+          server 1.fr.pool.ntp.org iburst
+          server 2.fr.pool.ntp.org iburst
+          server 3.fr.pool.ntp.org iburst
+          driftfile /var/lib/chrony/drift
+          makestep 1.0 3
+          rtcsync
+          logdir /var/log/chrony
+      notify: Restart Chrony
+
+  handlers:
+
+    - name: Restart Chrony
+      service:
+        name: chronyd.service
+        state: restarted

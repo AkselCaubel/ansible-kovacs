@@ -1,0 +1,9 @@
+--- # pkg-info.yml
+
+- hosts: all
+  gather_facts: true
+
+  tasks:
+
+    - debug:
+        msg: Package pour {{ ansible_facts.ansible_hostname }} est {{ ansible_facts.ansible_pkg_mgr }}

@@ -1,0 +1,12 @@
+--- # dns-info.yml
+
+- hosts: all
+  gather_facts: true
+
+  tasks:
+
+    - debug:
+        msg: "DNS de la machine {{ ansible_hostname }} : {{ ansible_dns.nameservers }}"
+
+
+
