@@ -8,7 +8,7 @@ Les checks suivants, proviennent du repository GitLab suivant : [kikinavak/forma
 
 Les playbooks écrits, se trouve dans le dossier playbooks
 
-La documentation est sous la forme `atelier/readme.md`.  
+La documentation est sous la forme `notes/${labs}.md`.  
 
 [01-Un labo pour Ansible](notes/01-un-labo-pour-ansible.md)  
 [02-Installer Ansible](notes/02-installer-ansible.md)  
